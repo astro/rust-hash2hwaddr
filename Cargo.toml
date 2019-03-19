@@ -1,0 +1,13 @@
+[package]
+name = "hash2hwaddr"
+description = "Hashes anything to a private MAC address"
+version = "0.0.0"
+authors = ["Astro <astro@spaceboyz.net>"]
+edition = "2018"
+license = "Apache-2.0"
+documentation = "https://docs.rs/hash2hwaddr"
+repository = "https://github.com/astro/rust-hash2hwaddr"
+homepage = "https://crates.io/crates/hash2hwaddr"
+
+[dev-dependencies]
+quickcheck = "0.8.2"
