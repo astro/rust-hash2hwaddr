@@ -55,7 +55,7 @@ impl Hasher for HwAddrHasher {
 }
 
 /// Generate a private MAC address by hashing something
-pub fn generate_hwaddr<H: Hash>(input: &H) -> HwAddr {
+pub fn generate_hwaddr<H: Hash>(input: H) -> HwAddr {
     let mut hasher = HwAddrHasher::new();
     input.hash(&mut hasher);
     hasher.unwrap()
