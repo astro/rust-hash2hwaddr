@@ -35,12 +35,16 @@ impl HwAddrHasher {
 impl Hasher for HwAddrHasher {
     fn write(&mut self, bytes: &[u8]) {
         for byte in bytes {
-            self.addr[self.pos] ^= byte;
+            self.write_u8(*byte);
+        }
+    }
 
-            self.pos += 1;
-            if self.pos >= self.addr.len() {
-                self.pos = 0;
-            }
+    fn write_u8(&mut self, byte: u8) {
+        self.addr[self.pos] ^= byte;
+
+        self.pos += 1;
+        if self.pos >= self.addr.len() {
+            self.pos = 0;
         }
     }
 
